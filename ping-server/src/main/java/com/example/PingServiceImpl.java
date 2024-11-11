@@ -10,11 +10,9 @@ public class PingServiceImpl extends PingServiceGrpc.PingServiceImplBase {
     public void ping(PingRequest request, StreamObserver<PingResponse> responseObserver) {
         long unixTimestamp = System.currentTimeMillis();
         System.out.println("Ping received at unix timestamp: " + unixTimestamp);
-
         PingResponse response = PingResponse.newBuilder()
                 .build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
-
     }
 }

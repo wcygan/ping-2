@@ -1,6 +1,6 @@
-# Notes
+# Milestone 1
 
-Random stuff I find while tinkering
+This milestone is all about running the server & testing basic functionality
 
 ## Building the image for [ping-server](/ping-server/pom.xml)
 

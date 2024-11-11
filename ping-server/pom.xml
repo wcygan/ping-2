@@ -23,8 +23,8 @@
     </repositories>
 
     <properties>
-        <java.version>11</java.version>
-        <grpc.version>1.57.1</grpc.version>
+        <java.version>23</java.version>
+        <grpc.version>1.68.1</grpc.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -40,6 +40,11 @@
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-protobuf</artifactId>
+            <version>${grpc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-services</artifactId>
             <version>${grpc.version}</version>
         </dependency>
         <dependency>
@@ -79,10 +84,10 @@
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
-                <version>3.4.0</version>
+                <version>3.4.4</version>
                 <configuration>
                     <from>
-                        <image>openjdk:${java.version}-jre-slim</image>
+                        <image>eclipse-temurin:${java.version}-alpine</image>
                         <platforms>
                             <platform>
                                 <architecture>arm64</architecture>
@@ -91,12 +96,13 @@
                         </platforms>
                     </from>
                     <to>
-                        <image>your-dockerhub-username/your-image-name</image>
+                        <image>wcygan/ping-server</image>
                     </to>
                     <container>
                         <ports>
                             <port>8080</port>
                         </ports>
+                        <mainClass>com.example.ServerApp</mainClass>
                     </container>
                 </configuration>
             </plugin>

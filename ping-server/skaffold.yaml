@@ -4,7 +4,7 @@ metadata:
   name: ping-server
 build:
   artifacts:
-    - image: your-dockerhub-username/your-image-name
+    - image: wcygan/ping-server
       context: .
       jib:
         project: com.example:ping-server

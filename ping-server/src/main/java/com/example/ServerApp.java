@@ -9,7 +9,7 @@ public class ServerApp {
     public static void main(String[] args) throws Exception {
         Server server = Grpc.newServerBuilderForPort(8080, InsecureServerCredentials.create())
             .addService(new PingServiceImpl())
-            .addService(ProtoReflectionService.newInstance())
+                .addService(ProtoReflectionService.newInstance())
             .build();
         server.start();
         System.out.println("Server started on port 8080");

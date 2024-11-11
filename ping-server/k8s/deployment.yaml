@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: ping-server
-          image: your-dockerhub-username/your-image-name
+          image: wcygan/ping-server
           ports:
             - containerPort: 8080

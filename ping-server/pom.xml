@@ -57,6 +57,11 @@
             <artifactId>javax.annotation-api</artifactId>
             <version>1.3.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.25.3</version>
+        </dependency>
         <!-- Buf SDK Dependencies -->
         <dependency>
             <groupId>build.buf.gen</groupId>

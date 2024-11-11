@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ping-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ping-server
+  template:
+    metadata:
+      labels:
+        app: ping-server
+    spec:
+      containers:
+        - name: ping-server
+          image: your-dockerhub-username/your-image-name
+          ports:
+            - containerPort: 8080

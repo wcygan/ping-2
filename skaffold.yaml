@@ -1,0 +1,19 @@
+apiVersion: skaffold/v4beta1
+kind: Config
+metadata:
+  name: ping-application
+
+requires:
+  - configs:
+      - ping-server
+    path: ping-server/skaffold.yaml
+
+#profiles:
+#  - name: bootstrap
+#    patches:
+#      - op: replace
+#        path: /requires
+#        value:
+#          - configs:
+#              - flink-operator-install
+#            path: flink/skaffold.yaml

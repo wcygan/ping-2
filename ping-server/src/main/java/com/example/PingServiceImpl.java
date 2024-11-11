@@ -8,9 +8,13 @@ import build.buf.gen.ping.v1.PingRequest;
 public class PingServiceImpl extends PingServiceGrpc.PingServiceImplBase {
     @Override
     public void ping(PingRequest request, StreamObserver<PingResponse> responseObserver) {
+        long unixTimestamp = System.currentTimeMillis();
+        System.out.println("Ping received at unix timestamp: " + unixTimestamp);
+
         PingResponse response = PingResponse.newBuilder()
-            .build();
+                .build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
+
     }
 }

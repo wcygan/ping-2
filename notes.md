@@ -13,3 +13,15 @@ mvn clean packge
 ```bash
 mvn versions:display-dependency-updates
 ```
+
+## Deploying ping-server on Kubernetes using Skaffold
+
+```bash
+skaffold dev
+```
+
+## Sending a gRPCurl with Reflection enabled
+
+```bash
+grpcurl -plaintext localhost:8080 ping.v1.PingService/Ping
+```
